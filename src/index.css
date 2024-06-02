@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* a {
+    @apply underline;
+  } */
+}
+
+@font-face {
+  font-family: "IntegralCF";
+  src: url(/fonts/Integral-CF-Bold.ttf);
+}
