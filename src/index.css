@@ -12,3 +12,10 @@
   font-family: "IntegralCF";
   src: url(/fonts/Integral-CF-Bold.ttf);
 }
+
+h2 {
+  @apply font-IntegralCF text-5xl text-center;
+}
+.dress-style {
+  @apply bg-white rounded-[20px] h-[289px] pl-9 pt-6 font-[700] text-4xl;
+}

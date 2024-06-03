@@ -4,9 +4,9 @@ import zara from "../assets/zara.svg";
 import gucci from "../assets/gucci.svg";
 import prada from "../assets/prada.svg";
 import ck from "../assets/ck.svg";
-import star from "../assets/star.svg";
 import { newArrivals, topSelling } from "../data";
 import ProductView from "./ProductView";
+import HappyCustomers from "./HappyCustomers";
 
 const Home = () => {
   return (
@@ -61,33 +61,35 @@ const Home = () => {
 
       {/* New arrivals */}
       <section className="px-[80px] pt-[72px] border-b-[#0000001A] border-b">
-        <h2 className="font-IntegralCF text-5xl pb-14 text-center">
-          NEW ARRIVALS
-        </h2>
+        <h2 className="pb-14">NEW ARRIVALS</h2>
         <ProductView products={newArrivals} />
       </section>
 
       {/* Top selling */}
       <section className="px-[80px] pt-[72px]">
-        <h2 className="font-IntegralCF text-5xl pb-14 text-center">
-          TOP SELLING
-        </h2>
+        <h2 className=" pb-14">TOP SELLING</h2>
         <ProductView products={topSelling} />
       </section>
 
       {/* Dress styles */}
       <section className="px-20">
         <div className="bg-[#F0F0F0] w-full px-16 pt-[70px] pb-[76px] rounded-[40px]">
-          <h2 className="font-IntegralCF text-5xl pb-14 text-center">
-            BROWSE BY DRESS STYLE
-          </h2>
-          <div className="w-full flex gap-5">
-            <div className="bg-white rounded-[20px] h-[289px] w-2/5"></div>
-            <div className="bg-white rounded-[20px] h-[289px] w-3/5"></div>
-            {/* <div className="bg-white rounded-[20px] h-[190px] w-2/3"></div>
-            <div className="bg-white rounded-[20px] h-[190px] w-1/3"></div> */}
+          <h2 className="pb-14">BROWSE BY DRESS STYLE</h2>
+          <div className=" grid grid-cols-[40%_60%] gap-5">
+            <div className="dress-style">Casual</div>
+            <div className="dress-style">Formal</div>
+          </div>
+          <div className="mt-5 grid grid-cols-[60%_40%] gap-5">
+            <div className="dress-style">Party</div>
+            <div className="dress-style">Gym</div>
           </div>
         </div>
+      </section>
+
+      {/* Happy customers */}
+      <section className="pt-20 pb-[170px]">
+        <h2 className="pb-10">OUR HAPPY CUSTOMERS</h2>
+        <HappyCustomers />
       </section>
     </div>
   );
