@@ -37,9 +37,9 @@ const happyCustomers = [
 
 const HappyCustomers = () => {
   return (
-    <div className="px-20 flex justify-center items-center gap-5 w-full">
+    <div className="overflow-x-hidden flex justify-center items-center gap-5 w-full">
       {happyCustomers.map((customer) => (
-        <div className="min-w-[400px] h-[240px] py-7 px-8 rounded-[20px] border border-[#0000001A]">
+        <div className="min-w-full md:min-w-[400px] md:h-[240px] py-7 px-6 md:px-8 rounded-[20px] border border-[#0000001A]">
           <div className="flex gap-1.5 item-center">
             {Array.from(Array(+customer.ratings.toString()[0]).keys()).map(
               (i) => (
@@ -47,11 +47,11 @@ const HappyCustomers = () => {
               )
             )}
           </div>
-          <div className="mb-3 pt-[15px] gap-1 flex items-center">
-            <h4 className="text-xl font-[700]">{customer.name}</h4>
+          <div className="mb-2 md:mb-3 pt-3 md:pt-[15px] gap-1 flex items-center">
+            <h4 className="text-base md:text-xl font-[700]">{customer.name}</h4>
             <img src={verify} alt="" className="" />
           </div>
-          <p className="text-base text-[#00000099]">{customer.comment}</p>
+          <p className="text-sm md:text-base text-[#00000099]">{customer.comment}</p>
         </div>
       ))}
     </div>
