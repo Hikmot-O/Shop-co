@@ -11,15 +11,12 @@ import { newArrivals, topSelling } from "../data";
 import ProductView from "./ProductView";
 import HappyCustomers from "./HappyCustomers";
 import Footer from "./Footer";
+import PopupHeader from "./PopupHeader";
 
 const Home = () => {
   return (
     <div className="font-Satoshi h-screen">
-      <div className="text-xs md:text-sm font-Satoshi py-2.5 bg-black text-white flex items-center justify-center">
-        Sign up and get 20% off to your first order.
-        <br></br>
-        <a className="pl-[2px] font-[500] underline">Sign Up Now</a>
-      </div>
+      <PopupHeader/>
       <Header />
       <section className="flex flex-col bg-[#F2F0F1] px-0 md:px-10 xl:px-20 pt-10 md:pt-[100px] lg:h-[663px] sm:bg-Hero-bg bg-cover bg-no-repeat bg-center">
         <div className="px-4 md:px-0 xl:px-0">

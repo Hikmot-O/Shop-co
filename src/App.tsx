@@ -1,13 +1,15 @@
-import './App.css'
-import Home from './components/Home'
+import "./App.css";
+import Home from "./components/Home";
+import ProductDetail from "./components/ProductDetail";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
-    <div className='text-sm'>
-        <Home/>
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/:id" element={<ProductDetail />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

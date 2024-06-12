@@ -28,3 +28,15 @@ h2 {
 .payment {
   @apply w-10 h-[26px] md:w-auto md:h-auto;
 }
+.product-image-small {
+  @apply bg-[#F0EEED] rounded-[20px] h-auto w-[152px];
+}
+.size {
+  @apply rounded-[62px] px-6 py-3 bg-[#F0F0F0] text-[#00000099] h-[46px] flex items-center justify-center;
+}
+.size-active {
+  @apply bg-black text-white rounded-[62px] px-6 py-3 h-[46px] flex items-center justify-center;
+}
+.review-header {
+  @apply pb-6 active:text-black active:border-b text-center border-b-black w-full;
+}
