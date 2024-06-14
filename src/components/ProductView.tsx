@@ -65,9 +65,9 @@ const ProductView = (props: ProductViewProps) => {
           </div>
         ))}
       </div>
-      <button className="font-[500] text-sm sm:text-base w-full sm:w-[218px] text-center mt-6 sm:mt-9 mb-10 sm:mb-16 py-4 px-[54px] rounded-[62px] border border-[#0000001A]">
+      {/* <button className="font-[500] text-sm sm:text-base w-full sm:w-[218px] text-center mt-6 sm:mt-9 mb-10 sm:mb-16 py-4 px-[54px] rounded-[62px] border border-[#0000001A]">
         View All
-      </button>
+      </button> */}
     </div>
   );
 };

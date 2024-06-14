@@ -16,7 +16,7 @@ import PopupHeader from "./PopupHeader";
 const Home = () => {
   return (
     <div className="font-Satoshi h-screen">
-      <PopupHeader/>
+      <PopupHeader />
       <Header />
       <section className="flex flex-col bg-[#F2F0F1] px-0 md:px-10 xl:px-20 pt-10 md:pt-[100px] lg:h-[663px] sm:bg-Hero-bg bg-cover bg-no-repeat bg-center">
         <div className="px-4 md:px-0 xl:px-0">
@@ -96,12 +96,22 @@ const Home = () => {
       <section className="mx-4 md:mx-10 xl:mx-20 pt-[50px] md:pt-[72px] border-b-[#0000001A] border-b">
         <h2 className="pb-8 md:pb-14">NEW ARRIVALS</h2>
         <ProductView products={newArrivals} />
+        <div className="flex justify-center">
+          <button className="font-[500] text-sm sm:text-base w-full sm:w-[218px] text-center mt-6 sm:mt-9 mb-10 sm:mb-16 py-4 px-[54px] rounded-[62px] border border-[#0000001A]">
+            View All
+          </button>
+        </div>
       </section>
 
       {/* Top selling */}
       <section className="px-4 md:px-10 xl:px-20 pt-10 md:pt-[72px]">
         <h2 className="pb-8 md:pb-14">TOP SELLING</h2>
         <ProductView products={topSelling} />
+        <div className="flex justify-center">
+          <button className="font-[500] text-sm sm:text-base w-full sm:w-[218px] text-center mt-6 sm:mt-9 mb-10 sm:mb-16 py-4 px-[54px] rounded-[62px] border border-[#0000001A]">
+            View All
+          </button>
+        </div>
       </section>
 
       {/* Dress styles */}
@@ -122,7 +132,9 @@ const Home = () => {
       {/* Happy customers */}
       <section className="px-4 md:px-10 xl:px-20 pt-[50px] md:pt-20 pb-[200px] md:pb-[170px]">
         <div className=" pb-10 flex items-center justify-between">
-          <h2 className="text-start max-w-[250px] sm:max-w-none">OUR HAPPY CUSTOMERS</h2>
+          <h2 className="text-start max-w-[250px] sm:max-w-none">
+            OUR HAPPY CUSTOMERS
+          </h2>
           <div className="flex items-center gap-4">
             <img src={arrowBack} alt="Back Arrow" className="" />
             <img src={arrowForward} alt="Forward Arrow" className="" />
@@ -131,6 +143,7 @@ const Home = () => {
         <HappyCustomers />
       </section>
 
+{/* <div className="top-[calc(-300px/2)] md:top-[-90px]"></div> */}
       <Footer />
     </div>
   );

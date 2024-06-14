@@ -14,7 +14,7 @@
 }
 
 h2 {
-  @apply font-IntegralCF text-[32px] md:text-5xl md:text-center leading-9;
+  @apply font-IntegralCF uppercase text-[32px] md:text-5xl md:text-center leading-9;
 }
 .dress-style {
   @apply mb-4 md:mb-0 bg-white rounded-[20px] h-[190px] md:h-[289px] pl-6 md:pl-9 pt-4 md:pt-6 font-[700] text-2xl md:text-4xl;
@@ -29,10 +29,10 @@ h2 {
   @apply w-10 h-[26px] md:w-auto md:h-auto;
 }
 .product-image-small {
-  @apply bg-[#F0EEED] rounded-[20px] h-auto w-[152px];
+  @apply bg-[#F0EEED] rounded-[20px] h-[106px] sm:h-[160px] w-auto md:w-[152px] md:h-full;
 }
 .size {
-  @apply rounded-[62px] px-6 py-3 bg-[#F0F0F0] text-[#00000099] h-[46px] flex items-center justify-center;
+  @apply rounded-[62px] px-5 md:px-6 py-2.5 md:py-3 bg-[#F0F0F0] text-[#00000099] text-sm md:text-base h-[46px] flex items-center justify-center;
 }
 .size-active {
   @apply bg-black text-white rounded-[62px] px-6 py-3 h-[46px] flex items-center justify-center;
