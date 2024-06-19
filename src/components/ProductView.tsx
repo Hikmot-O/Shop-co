@@ -9,23 +9,37 @@ type ProductViewProps = {
     price: number;
     discount: number;
   }[];
+  type?: string;
 };
 
 const ProductView = (props: ProductViewProps) => {
-  const { products } = props;
+  const { products, type } = props;
 
   return (
     <div className="w-full flex flex-col items-center">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 w-full">
+      <div
+        className={
+          type === "collection"
+            ? "grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-[19px] w-full"
+            : "grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 w-full"
+        }
+      >
         {products.map((product, i) => (
           <div key={i} className="">
             <div className="rounded-[20px] bg-[#F0EEED] w-auto h-[200px] md:h-[298px] mb-2.5 md:mb-4"></div>
-            <p className="font-[700] text-base md:text-[20px]">{product.title}</p>
+            <p className="font-[700] text-base md:text-[20px]">
+              {product.title}
+            </p>
             <div className="text-sm gap-3 flex items-center my-1 md:my-2">
               <div className="flex gap-[4.44px] md:gap-1.5 item-center">
                 {Array.from(Array(+product.ratings.toString()[0]).keys()).map(
                   (i) => (
-                    <img key={i} src={star} alt="Star Svg" className="h-4 w-4 md:h-auto md:w-auto" />
+                    <img
+                      key={i}
+                      src={star}
+                      alt="Star Svg"
+                      className="h-4 w-4 md:h-auto md:w-auto"
+                    />
                   )
                 )}
                 {product.ratings.toString().includes(".") ? (

@@ -40,3 +40,9 @@ h2 {
 .review-header {
   @apply pb-6 active:text-black active:border-b text-center border-b-black w-full;
 }
+.color{
+  @apply rounded-full h-9 w-9 border border-[#00000033]
+}
+.pagination{
+  @apply p-3 rounded-lg text-sm font-[500] text-[#00000080]
+}
