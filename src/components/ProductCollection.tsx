@@ -1,9 +1,12 @@
+import { useState } from "react";
 import Header from "./Header";
 import PopupHeader from "./PopupHeader";
 import ProductView from "./ProductView";
+import FiltersMobile from "./FiltersMobile";
 import Footer from "./Footer";
 import arrow from "../assets/greaterThan.svg";
-import filter from "../assets/filterGray.svg";
+import filterGray from "../assets/filterGray.svg";
+import filter from "../assets/filter.svg";
 import arrowUp from "../assets/arrowUp.svg";
 import arrowDown from "../assets/arrowDown.svg";
 import arrowBack from "../assets/arrowBack.svg";
@@ -84,11 +87,26 @@ const sizes = [
 ];
 
 const ProductCollection = () => {
+  const [isFilter, setIsFilter] = useState(false);
+
+  const openFilterHandler = () => {
+    setIsFilter(true);
+  };
+  const closeFilterHandler = (val:boolean) => {
+    setIsFilter(val);
+  };
   return (
-    <div className="font-Satoshi w-full">
+    <div
+      className={
+        isFilter
+          ? "z-10 h-screen md:h-auto relative font-Satoshi w-full"
+          : "z-10 h-screen md:h-auto relative font-Satoshi w-full overflow-y-hidden"
+      }
+    >
+      {isFilter && <FiltersMobile onCloseFilter={closeFilterHandler} />}
       <PopupHeader />
       <Header />
-      <section className="pb-[calc(80px+91px)] border-t border-t-[#0000001A] px-20 pt-6 ">
+      <section className="pb-[calc(80px+91px)] border-t border-t-[#0000001A] px-4 md:px-10 xl:px-20 pt-6 ">
         {/* Links */}
         <div className="py-5 md:pt-6 md:pb-9 flex items-center gap-4 text-sm md:text-base text-[#00000099]">
           <a href="" className="flex items-center gap-1">
@@ -102,11 +120,11 @@ const ProductCollection = () => {
 
         <div className="mt-6 flex gap-5">
           {/* Filters */}
-          <div className="w-[295px] py-5 px-6 rounded-[20px] border border-[#0000001A]">
+          <div className=" hidden md:block w-[295px] py-5 px-6 rounded-[20px] border border-[#0000001A]">
             <div className="pb-6 flex items-center justify-between ">
               <h4 className="text-xl font-[700]">Filters</h4>
               <div className="">
-                <img src={filter} alt="Filter Svg" className="" />
+                <img src={filterGray} alt="Filter Svg" className="" />
               </div>
             </div>
             {/* filter options */}
@@ -141,7 +159,28 @@ const ProductCollection = () => {
                     <img src={arrowUp} alt="Arrow-up Svg" className="" />
                   </div>
                 </div>
-                <input type="range" name="" id="" />
+                <div className="flex">
+                  <input
+                    className="bg-black"
+                    type="range"
+                    min="0"
+                    max="500"
+                    step="10"
+                    value="100"
+                    name=""
+                    id=""
+                  />
+                  {/* <input
+                  className="bg-red-400"
+                    type="range"
+                    min="0"
+                    max="500"
+                    step="10"
+                    value="200"
+                    name=""
+                    id=""
+                  /> */}
+                </div>
               </div>
               {/* Colors */}
               <div className="py-6 border-y border-y-[#0000001A]">
@@ -154,6 +193,7 @@ const ProductCollection = () => {
                 <div className="grid grid-cols-5 gap-x-auto gap-y-4 ">
                   {colors.map((color) => (
                     <div
+                    key={color.color}
                       style={{ background: `${color.color}` }}
                       className="color"
                     ></div>
@@ -170,7 +210,7 @@ const ProductCollection = () => {
                 </div>
                 <div className="flex flex-wrap gap-2 items-center">
                   {sizes.map((size) => (
-                    <div className="px-5 py-2.5 rounded-[62px] bg-[#F0F0F0] text-sm text-[#00000099]">
+                    <div key={size.size} className="px-5 py-2.5 rounded-[62px] bg-[#F0F0F0] text-sm text-[#00000099]">
                       {size.size}
                     </div>
                   ))}
@@ -209,16 +249,24 @@ const ProductCollection = () => {
             </button>
           </div>
           {/* Product Display */}
-          <div className="w-[calc(100%-295px)]">
+          <div className="w-full md:w-[calc(100%-295px)]">
             {/* header */}
             <div className="mb-7 flex items-center justify-between">
-              <h3 className="text-[32px] font-[700]">Casual</h3>
-              <div className="text-[#00000099] text-base flex items-center gap-3">
-                <p className="">Showing 1-10 of 100 Products</p>
-                <div className="flex items-center gap-1">
-                  Sort by: <span className="text-black">Most Popular </span>
-                  <img src={arrowDown} alt="Arrow-down Svg" className="" />
+              <div className=" w-full flex items-center gap-2 md:gap-0 md:justify-between">
+                <h3 className="text-2xl md:text-[32px] font-[700]">Casual</h3>
+                <div className="text-[#00000099] text-base flex items-center gap-3">
+                  <p className="">Showing 1-10 of 100 Products</p>
+                  <div className="hidden md:flex items-center gap-1">
+                    Sort by: <span className="text-black">Most Popular </span>
+                    <img src={arrowDown} alt="Arrow-down Svg" className="" />
+                  </div>
                 </div>
+              </div>
+              <div
+                onClick={openFilterHandler}
+                className="w-8 h-8 cursor-pointer flex md:hidden items-center justify-center rounded-full bg-[#F0F0F0] "
+              >
+                <img src={filter} alt="Filter Button" className="h-4 w-4" />
               </div>
             </div>
             <ProductView products={topSelling} type="collection" />

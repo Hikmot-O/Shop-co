@@ -1,5 +1,6 @@
 import logo from "../assets/Logo.svg";
 import bar from "../assets/bar.svg";
+import search from "../assets/Search.svg";
 import searchMobile from "../assets/search-mobile.svg";
 
 const Header = () => {
@@ -37,11 +38,14 @@ const Header = () => {
         </div>
       </div>
       <div className="flex items-center justify-center gap-10">
-        <input
-          placeholder="Search for products..."
-          type="text"
-          className="hidden md:flex bg-[#F0F0F0] w-[300px] xl:w-[530px] placeholder:text-[#00000066] py-3 px-4 rounded-[62px]"
-        />
+        <div className="relative">
+          <input
+            placeholder="Search for products..."
+            type="text"
+            className="hidden md:flex bg-[#F0F0F0] w-[300px] xl:w-[530px] placeholder:text-[#00000066] py-3 pl-[52px] pr-4 rounded-[62px]"
+          />
+          <img src={search} alt="Search Svg" className="absolute top-3 left-4" />
+        </div>
         <div className="flex items-center justify-center gap-3.5">
           {/* Search icon mobile */}
           <img

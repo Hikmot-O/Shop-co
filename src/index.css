@@ -46,3 +46,6 @@ h2 {
 .pagination{
   @apply p-3 rounded-lg text-sm font-[500] text-[#00000080]
 }
+.order-summary{
+  @apply text-base md:text-xl mb-5 flex items-center justify-between
+}
