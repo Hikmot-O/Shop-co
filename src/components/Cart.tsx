@@ -58,9 +58,9 @@ const Cart = () => {
         <div className="p-3.5 md:px-6 md:py-5 border rounded-[20px] border-[#0000001A]">
           {cartItems.map((item) => (
             <div className="w-full pt-6 first:pt-0 pb-4 md:pb-6 last:pb-0 border-b last:border-b-0 border-b-[#0000001A]">
-              <div className="flex gap-2.5 md:gap-4">
+              <div className="h-full flex gap-2.5 md:gap-4">
                 <div className="bg-[#F0EEED] w-[99px] h-[99px] md:w-[124px] md:h-[124px] rounded-[8.66px]"></div>
-                <div className="w-full h-max flex flex-col justify-between">
+                <div className="w-full h-[99px] md:h-[124px] flex flex-col justify-between">
                   <div className="">
                     <div className="w-full flex items-center justify-between">
                       <h5 className="text-base md:text-xl font-[700]">
@@ -82,8 +82,8 @@ const Cart = () => {
                       <span className="text-[#00000099]">{item.color}</span>
                     </p>
                   </div>
-                  <div className="w-full flex items center justify-between">
-                    <p className="pt-[13px] md:pt-0 text-2xl font-[700]">
+                  <div className="w-full flex items-center justify-between">
+                    <p className="pt-[13px] md:pt-0  text-2xl font-[700]">
                       {item.price}
                     </p>
                     <button className="h-[31px] md:h-11 rounded-[62px] py-3.5 md:py-3 px-5 bg-[#F0F0F0] flex items-center justify-center gap-5">
